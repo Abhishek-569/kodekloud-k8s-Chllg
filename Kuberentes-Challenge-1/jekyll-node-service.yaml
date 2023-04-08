@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: jekyll
+  namespace: development
+spec:
+  selector:
+    run: jekyll
+  ports:
+  - name: http
+    port: 8080
+    targetPort: 4000
+    nodePort: 30097
+    protocol: TCP
+  type: NodePort
